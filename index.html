@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>APEX FITNESS — Premium Health Club</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+<div id="cursor"><div id="cursorDot"></div></div>
+
+<!-- LOADER -->
+<div id="loader">
+  <canvas id="loaderCanvas"></canvas>
+  <div class="ld-content">
+    <div class="ld-logo">APEX</div>
+    <div class="ld-sub">FITNESS CLUB · EST. 2012</div>
+    <div class="ld-track"><span id="ldBar"></span></div>
+    <div class="ld-pct" id="ldPct">0%</div>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <div class="nav-wrap">
+    <a href="#hero" class="logo">
+      <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
+        <path d="M15 1.5L28.5 8.75V21.25L15 28.5L1.5 21.25V8.75L15 1.5Z" stroke="url(#lg0)" stroke-width="1.5" fill="none"/>
+        <path d="M15 7.5L22.5 11.5V18.5L15 22.5L7.5 18.5V11.5L15 7.5Z" fill="url(#lg0)" opacity=".1"/>
+        <path d="M11.5 15L14 12L17 15L14 18Z" fill="url(#lg0)"/>
+        <defs><linearGradient id="lg0" x1="1" y1="1" x2="29" y2="29" gradientUnits="userSpaceOnUse"><stop stop-color="#ff2d55"/><stop offset="1" stop-color="#ff7700"/></linearGradient></defs>
+      </svg>
+      <div class="logo-words"><b>APEX</b><em>FITNESS</em></div>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#modalidades">Modalidades</a></li>
+      <li><a href="#resultados">Resultados</a></li>
+      <li><a href="#instrutores">Equipe</a></li>
+      <li><a href="#planos">Planos</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="tel:+5511999998888" class="nav-phone"><i class="fas fa-phone-alt"></i>(11) 99999-8888</a>
+      <a href="#planos" class="btn-nav mag-btn">Matricule-se</a>
+      <button class="burger" id="burger" aria-label="Menu"><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-media">
+    <!-- Vídeo de treino intenso na academia -->
+    <video autoplay muted loop playsinline>
+      <source src="https://videos.pexels.com/video-files/6798826/6798826-hd_1920_1080_25fps.mp4" type="video/mp4"/>
+      <source src="https://videos.pexels.com/video-files/4753927/4753927-hd_1920_1080_25fps.mp4" type="video/mp4"/>
+    </video>
+    <div class="hero-veil"></div>
+    <div class="hero-noise"></div>
+  </div>
+  <div class="orb a"></div><div class="orb b"></div><div class="orb c"></div>
+
+  <div class="hero-body">
+    <div class="hero-left">
+      <div class="hero-pill" data-r>
+        <span class="live-dot"></span>Nº1 de São Paulo · +2.500 membros
+      </div>
+      <h1 class="hero-title" data-r data-d=".1">
+        <span class="ht-line"><em>FORGE</em></span>
+        <span class="ht-line grad"><em>YOUR</em></span>
+        <span class="ht-line"><em>LEGACY.</em></span>
+      </h1>
+      <p class="hero-desc" data-r data-d=".3">Equipamentos de última geração, metodologia de elite e uma comunidade que vai te impulsionar além dos seus limites.</p>
+      <div class="hero-btns" data-r data-d=".42">
+        <a href="#planos" class="btn-fill mag-btn">Começar Agora <i class="fas fa-arrow-right"></i></a>
+        <button class="btn-video mag-btn" id="btnPlay"><div class="vid-ring"><i class="fas fa-play"></i></div><span>Tour Virtual</span></button>
+      </div>
+      <div class="hero-metrics" data-r data-d=".56">
+        <div class="hm"><b><span class="cnt" data-t="2500">0</span>+</b><s>Alunos</s></div>
+        <div class="hm-sep"></div>
+        <div class="hm"><b><span class="cnt" data-t="15">0</span></b><s>Modalidades</s></div>
+        <div class="hm-sep"></div>
+        <div class="hm"><b><span class="cnt" data-t="12">0</span>+</b><s>Anos</s></div>
+        <div class="hm-sep"></div>
+        <div class="hm"><b><span class="cnt" data-t="98">0</span>%</b><s>Satisfação</s></div>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="hero-bigphoto">
+        <img src="https://images.pexels.com/photos/3837781/pexels-photo-3837781.jpeg?auto=compress&cs=tinysrgb&w=1400&h=1800&fit=crop&crop=top" alt="Atleta APEX em treino de força"/>
+        <div class="hbp-veil"></div>
+      </div>
+      <div class="float-card fc-top">
+        <div class="fc-icon"><i class="fas fa-fire"></i></div>
+        <div class="fc-info"><b>Alto Desempenho</b><span>CrossFit + Musculação</span></div>
+      </div>
+      <div class="float-card fc-mid">
+        <div class="fc-avatars">
+          <img src="https://images.pexels.com/photos/1130626/pexels-photo-1130626.jpeg?auto=compress&cs=tinysrgb&w=80&h=80&fit=crop&crop=face" alt=""/>
+          <img src="https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?auto=compress&cs=tinysrgb&w=80&h=80&fit=crop&crop=face" alt=""/>
+          <img src="https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=80&h=80&fit=crop&crop=face" alt=""/>
+        </div>
+        <div class="fc-info"><b>+2.500 membros</b><span>Junte-se a nós</span></div>
+      </div>
+      <div class="float-card fc-bot">
+        <div class="fc-rating">★★★★★</div>
+        <div class="fc-info"><b>4.9 Google</b><span>+5.200 reviews</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-scroll">
+    <div class="hs-line"><span></span></div>
+    <p>SCROLL</p>
+  </div>
+  <div class="hero-grid-deco" aria-hidden="true">
+    <span></span><span></span><span></span><span></span>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap">
+  <div class="mq-track">
+    <span>Musculação</span><i class="fas fa-diamond mx"></i>
+    <span>CrossFit</span><i class="fas fa-diamond mx"></i>
+    <span>Yoga &amp; Pilates</span><i class="fas fa-diamond mx"></i>
+    <span>Spinning</span><i class="fas fa-diamond mx"></i>
+    <span>Natação</span><i class="fas fa-diamond mx"></i>
+    <span>Boxe &amp; MMA</span><i class="fas fa-diamond mx"></i>
+    <span>Nutrição Esportiva</span><i class="fas fa-diamond mx"></i>
+    <span>Personal Trainer</span><i class="fas fa-diamond mx"></i>
+    <span>Avaliação Física</span><i class="fas fa-diamond mx"></i>
+    <span>App Exclusivo</span><i class="fas fa-diamond mx"></i>
+    <span>Musculação</span><i class="fas fa-diamond mx"></i>
+    <span>CrossFit</span><i class="fas fa-diamond mx"></i>
+    <span>Yoga &amp; Pilates</span><i class="fas fa-diamond mx"></i>
+    <span>Spinning</span><i class="fas fa-diamond mx"></i>
+    <span>Natação</span><i class="fas fa-diamond mx"></i>
+    <span>Boxe &amp; MMA</span><i class="fas fa-diamond mx"></i>
+    <span>Nutrição Esportiva</span><i class="fas fa-diamond mx"></i>
+    <span>Personal Trainer</span><i class="fas fa-diamond mx"></i>
+    <span>Avaliação Física</span><i class="fas fa-diamond mx"></i>
+    <span>App Exclusivo</span><i class="fas fa-diamond mx"></i>
+  </div>
+</div>
+
+<!-- FEATURES -->
+<div class="features-bar">
+  <div class="container">
+    <div class="fb-row">
+      <div class="fb-item" data-r><div class="fb-ico"><i class="fas fa-dumbbell"></i></div><div><b>2.000m² de Estrutura</b><s>Maior da região</s></div></div>
+      <div class="fb-sep"></div>
+      <div class="fb-item" data-r data-d=".1"><div class="fb-ico"><i class="fas fa-clock"></i></div><div><b>Aberto 7 dias</b><s>De 5h30 às 23h</s></div></div>
+      <div class="fb-sep"></div>
+      <div class="fb-item" data-r data-d=".2"><div class="fb-ico"><i class="fas fa-wifi"></i></div><div><b>Wi-Fi + App Exclusivo</b><s>Treino na palma da mão</s></div></div>
+      <div class="fb-sep"></div>
+      <div class="fb-item" data-r data-d=".3"><div class="fb-ico"><i class="fas fa-square-parking"></i></div><div><b>Estacionamento Grátis</b><s>150 vagas cobertas</s></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- SOBRE -->
+<section id="sobre" class="section">
+  <div class="container">
+    <div class="about-wrap">
+      <div class="about-pics" data-r>
+        <div class="ap-main">
+          <!-- Vista geral da academia com toda a estrutura de musculação -->
+          <img src="https://images.pexels.com/photos/1954524/pexels-photo-1954524.jpeg?auto=compress&cs=tinysrgb&w=900&h=1100&fit=crop&crop=center" alt="Academia APEX — estrutura completa"/>
+          <div class="ap-award"><i class="fas fa-trophy"></i><div><b>Melhor Academia</b><s>Guia SP · 2023</s></div></div>
+        </div>
+        <div class="ap-stack">
+          <!-- Equipamentos: cabos e máquinas Life Fitness -->
+          <div class="ap-sm"><img src="https://images.pexels.com/photos/4162452/pexels-photo-4162452.jpeg?auto=compress&cs=tinysrgb&w=500&h=380&fit=crop&crop=center" alt="Equipamentos Life Fitness"/></div>
+          <div class="ap-stat"><b>12<sup>+</sup></b><s>Anos</s></div>
+          <!-- Treino com pesos olímpicos -->
+          <div class="ap-sm"><img src="https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?auto=compress&cs=tinysrgb&w=500&h=380&fit=crop&crop=center" alt="Treino com pesos"/></div>
+        </div>
+      </div>
+      <div class="about-text" data-r data-d=".15">
+        <div class="eyebrow">Nossa história</div>
+        <h2 class="about-h2">Mais que uma academia.<br/><em>Uma filosofia de vida.</em></h2>
+        <p class="about-lead">Desde 2012, transformamos mais de 2.500 vidas em São Paulo através de metodologia científica, tecnologia de ponta e um ambiente que inspira superação todos os dias.</p>
+        <p>Nossos 2.000m² são pensados ao detalhe — do iniciante ao atleta de alto desempenho, todo mundo encontra seu espaço e sua evolução na APEX.</p>
+        <div class="about-rows">
+          <div class="ar-item"><div class="ar-num">01</div><div><h4>Ciência no Treino</h4><p>Metodologia baseada em evidências com avaliação física periódica e protocolos individualizados.</p></div></div>
+          <div class="ar-item"><div class="ar-num">02</div><div><h4>Comunidade Real</h4><p>Um ambiente acolhedor que transforma strangers em verdadeiros companheiros de jornada.</p></div></div>
+          <div class="ar-item"><div class="ar-num">03</div><div><h4>Resultados Garantidos</h4><p>98% dos alunos recomendam a APEX após os primeiros 90 dias de treinamento.</p></div></div>
+        </div>
+        <a href="#planos" class="btn-outline mag-btn">Conhecer Planos <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MODALIDADES -->
+<section id="modalidades" class="section section-alt">
+  <div class="container">
+    <div class="sec-head" data-r>
+      <div class="eyebrow">O que oferecemos</div>
+      <h2>Modalidades que <em>transformam</em></h2>
+      <p>Mais de 15 atividades para todos os objetivos e níveis</p>
+    </div>
+    <div class="mods-mosaic">
+
+      <!-- Musculação: sala com halteres e equipamentos -->
+      <div class="mc mc-tall" data-r>
+        <img src="https://images.pexels.com/photos/1552242/pexels-photo-1552242.jpeg?auto=compress&cs=tinysrgb&w=900&h=1200&fit=crop&crop=center" alt="Musculação"/>
+        <div class="mc-veil"></div>
+        <div class="mc-body">
+          <span class="mc-n">01</span>
+          <h3>Musculação</h3>
+          <p>800m² com Life Fitness &amp; Technogym de última geração, supervisão permanente.</p>
+          <div class="mc-tags"><span>Hipertrofia</span><span>Definição</span><span>Força</span></div>
+        </div>
+      </div>
+
+      <div class="mc-col">
+        <!-- CrossFit: treino funcional com barras e anilhas -->
+        <div class="mc" data-r data-d=".1">
+          <img src="https://images.pexels.com/photos/4164761/pexels-photo-4164761.jpeg?auto=compress&cs=tinysrgb&w=700&h=500&fit=crop" alt="CrossFit"/>
+          <div class="mc-veil"></div>
+          <div class="mc-body"><span class="mc-n">02</span><h3>CrossFit</h3><p>Box dedicado com coaches CF-L2 certificados.</p><div class="mc-tags"><span>HIIT</span><span>Performance</span></div></div>
+        </div>
+        <!-- Yoga: mulher em posição de yoga / meditação -->
+        <div class="mc" data-r data-d=".2">
+          <img src="https://images.pexels.com/photos/3822622/pexels-photo-3822622.jpeg?auto=compress&cs=tinysrgb&w=700&h=500&fit=crop" alt="Yoga"/>
+          <div class="mc-veil"></div>
+          <div class="mc-body"><span class="mc-n">03</span><h3>Yoga &amp; Pilates</h3><p>Estúdio aquecido, professores certificados internacionais.</p><div class="mc-tags"><span>Mindfulness</span><span>Equilíbrio</span></div></div>
+        </div>
+      </div>
+
+      <div class="mc-col">
+        <!-- Boxe: atleta com luvas no saco de pancadas -->
+        <div class="mc" data-r data-d=".1">
+          <img src="https://images.pexels.com/photos/4761784/pexels-photo-4761784.jpeg?auto=compress&cs=tinysrgb&w=700&h=500&fit=crop" alt="Boxe"/>
+          <div class="mc-veil"></div>
+          <div class="mc-body"><span class="mc-n">04</span><h3>Boxe &amp; MMA</h3><p>Ring oficial com instrutores campeões regionais.</p><div class="mc-tags"><span>Combate</span><span>Cardio</span></div></div>
+        </div>
+        <!-- Natação: piscina semi-olímpica com raias -->
+        <div class="mc" data-r data-d=".2">
+          <img src="https://images.pexels.com/photos/261185/pexels-photo-261185.jpeg?auto=compress&cs=tinysrgb&w=700&h=500&fit=crop&crop=center" alt="Natação — piscina semi-olímpica"/>
+          <div class="mc-veil"></div>
+          <div class="mc-body"><span class="mc-n">05</span><h3>Natação</h3><p>Piscina semi-olímpica aquecida a 28°C com raias de competição.</p><div class="mc-tags"><span>Aquático</span><span>Kids</span></div></div>
+        </div>
+      </div>
+
+      <!-- Spinning: sala com bikes e iluminação imersiva -->
+      <div class="mc mc-wide" data-r>
+        <img src="https://images.pexels.com/photos/4754005/pexels-photo-4754005.jpeg?auto=compress&cs=tinysrgb&w=1400&h=550&fit=crop&crop=center" alt="Spinning Studio"/>
+        <div class="mc-veil"></div>
+        <div class="mc-body"><span class="mc-n">06</span><h3>Spinning Studio</h3><p>40 bikes com sistema de som imersivo, luzes dinâmicas e maior queima calórica da semana.</p><div class="mc-tags"><span>Cardio</span><span>Energia</span><span>Grupo</span></div></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- RESULTADOS -->
+<section id="resultados" class="section results-section">
+  <div class="results-bg">
+    <!-- Atmosfera de academia intensa como backdrop -->
+    <img src="https://images.pexels.com/photos/1552106/pexels-photo-1552106.jpeg?auto=compress&cs=tinysrgb&w=1600&h=800&fit=crop" alt=""/>
+    <div class="results-bg-veil"></div>
+  </div>
+  <div class="container">
+    <div class="sec-head sec-head-light" data-r>
+      <div class="eyebrow" style="color:#ff7700">Resultados reais</div>
+      <h2 style="color:#fff">Transformações que <em>provam</em></h2>
+      <p style="color:rgba(255,255,255,.6)">Histórias verdadeiras. Números reais. Sem filtro, sem Photoshop.</p>
+    </div>
+
+    <div class="results-grid">
+
+      <!-- CARD 1: Mariana — mulher fitness em treino, corpo transformado -->
+      <div class="rc" data-r>
+        <div class="rc-photo">
+          <img src="https://images.pexels.com/photos/3768722/pexels-photo-3768722.jpeg?auto=compress&cs=tinysrgb&w=600&h=720&fit=crop&crop=top" alt="Mariana — transformação −18kg"/>
+          <div class="rc-photo-veil"></div>
+          <span class="rc-plan">Plano Elite</span>
+        </div>
+        <div class="rc-body">
+          <div class="rc-who"><b>Mariana S.</b><s>32 anos · 6 meses</s></div>
+          <div class="rc-compare">
+            <div class="rcc before">
+              <span class="rcc-label">ANTES</span>
+              <div class="rcc-val">95 <sup>kg</sup></div>
+              <div class="rcc-sub">42% gordura · Sedentária</div>
+            </div>
+            <div class="rcc-arrow"><i class="fas fa-arrow-right"></i></div>
+            <div class="rcc after">
+              <span class="rcc-label">DEPOIS</span>
+              <div class="rcc-val">77 <sup>kg</sup></div>
+              <div class="rcc-sub">22% gordura · Ativa</div>
+            </div>
+          </div>
+          <div class="rc-progress-wrap">
+            <div class="rc-progress-track"><div class="rc-progress-fill" style="--w:82%"></div></div>
+            <span>−18 kg alcançados</span>
+          </div>
+          <blockquote class="rc-quote">"Perdi 18kg e recuperei minha autoestima. A APEX mudou minha vida completamente."</blockquote>
+          <div class="rc-stars">★★★★★</div>
+        </div>
+      </div>
+
+      <!-- CARD 2: Lucas — homem musculoso, ganho de massa -->
+      <div class="rc" data-r data-d=".15">
+        <div class="rc-photo">
+          <img src="https://images.pexels.com/photos/1547248/pexels-photo-1547248.jpeg?auto=compress&cs=tinysrgb&w=600&h=720&fit=crop&crop=top" alt="Lucas — ganho de +12kg massa"/>
+          <div class="rc-photo-veil"></div>
+          <span class="rc-plan">Plano Pro</span>
+        </div>
+        <div class="rc-body">
+          <div class="rc-who"><b>Lucas M.</b><s>28 anos · 8 meses</s></div>
+          <div class="rc-compare">
+            <div class="rcc before">
+              <span class="rcc-label">ANTES</span>
+              <div class="rcc-val">68 <sup>kg</sup></div>
+              <div class="rcc-sub">Magro · Sem definição</div>
+            </div>
+            <div class="rcc-arrow"><i class="fas fa-arrow-right"></i></div>
+            <div class="rcc after">
+              <span class="rcc-label">DEPOIS</span>
+              <div class="rcc-val">80 <sup>kg</sup></div>
+              <div class="rcc-sub">12% gordura · Definido</div>
+            </div>
+          </div>
+          <div class="rc-progress-wrap">
+            <div class="rc-progress-track"><div class="rc-progress-fill" style="--w:90%"></div></div>
+            <span>+12 kg de massa pura</span>
+          </div>
+          <blockquote class="rc-quote">"Passei a vida tentando ganhar massa. Em 8 meses com a APEX consegui o que nunca imaginei."</blockquote>
+          <div class="rc-stars">★★★★★</div>
+        </div>
+      </div>
+
+      <!-- CARD 3: Pedro — atleta corredor, homem saudável e definido -->
+      <div class="rc" data-r data-d=".3">
+        <div class="rc-photo">
+          <img src="https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg?auto=compress&cs=tinysrgb&w=600&h=720&fit=crop&crop=top" alt="Pedro — corredor após transformação"/>
+          <div class="rc-photo-veil"></div>
+          <span class="rc-plan">Plano Elite</span>
+        </div>
+        <div class="rc-body">
+          <div class="rc-who"><b>Pedro A.</b><s>41 anos · 12 meses</s></div>
+          <div class="rc-compare">
+            <div class="rcc before">
+              <span class="rcc-label">ANTES</span>
+              <div class="rcc-val">88 <sup>kg</sup></div>
+              <div class="rcc-sub">Sedentário · Pressão alta</div>
+            </div>
+            <div class="rcc-arrow"><i class="fas fa-arrow-right"></i></div>
+            <div class="rcc after">
+              <span class="rcc-label">DEPOIS</span>
+              <div class="rcc-val">74 <sup>kg</sup></div>
+              <div class="rcc-sub">Corredor · Saudável</div>
+            </div>
+          </div>
+          <div class="rc-progress-wrap">
+            <div class="rc-progress-track"><div class="rc-progress-fill" style="--w:76%"></div></div>
+            <span>−14 kg e 1ª maratona</span>
+          </div>
+          <blockquote class="rc-quote">"Corri minha primeira maratona aos 41 anos. O que parecia impossível virou rotina."</blockquote>
+          <div class="rc-stars">★★★★★</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="impact-bar" data-r>
+      <div class="ib-item"><b><span class="cnt" data-t="847">0</span></b><s>Transformações em 2023</s></div>
+      <div class="ib-sep"></div>
+      <div class="ib-item"><b><span class="cnt" data-t="92">0</span>%</b><s>Atingem o objetivo em 90 dias</s></div>
+      <div class="ib-sep"></div>
+      <div class="ib-item"><b>4.9 ★</b><s>Avaliação Google Maps</s></div>
+      <div class="ib-sep"></div>
+      <div class="ib-item"><b><span class="cnt" data-t="18">0</span></b><s>Especialistas na equipe</s></div>
+    </div>
+  </div>
+</section>
+
+<!-- HORÁRIOS -->
+<section id="horarios" class="section section-alt">
+  <div class="container">
+    <div class="sec-head" data-r>
+      <div class="eyebrow">Planeje seu treino</div>
+      <h2>Grade de <em>horários</em></h2>
+    </div>
+    <div class="sched-tabs" data-r>
+      <button class="stab active" data-day="seg">Segunda</button>
+      <button class="stab" data-day="ter">Terça</button>
+      <button class="stab" data-day="qua">Quarta</button>
+      <button class="stab" data-day="qui">Quinta</button>
+      <button class="stab" data-day="sex">Sexta</button>
+      <button class="stab" data-day="sab">Sábado</button>
+    </div>
+    <div class="sched-grid" id="schedGrid" data-r></div>
+  </div>
+</section>
+
+<!-- INSTRUTORES -->
+<section id="instrutores" class="section">
+  <div class="container">
+    <div class="sec-head" data-r>
+      <div class="eyebrow">Nossa equipe</div>
+      <h2>Especialistas em <em>resultados</em></h2>
+      <p>Profissionais certificados e apaixonados pela sua evolução</p>
+    </div>
+    <div class="trainers-wrap">
+
+      <!-- Carlos Silva: personal trainer masculino em ambiente de academia -->
+      <div class="tc" data-r>
+        <div class="tc-img">
+          <img src="https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg?auto=compress&cs=tinysrgb&w=600&h=750&fit=crop&crop=top" alt="Carlos Silva — Personal Trainer"/>
+          <div class="tc-reveal">
+            <p class="tc-frase">"Cada rep conta. Cada dia importa."</p>
+            <div class="tc-soc"><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-whatsapp"></i></a></div>
+          </div>
+        </div>
+        <div class="tc-info">
+          <div><h3>Carlos Silva</h3><span>Personal Trainer · CREF 012345</span></div>
+          <div class="tc-chips"><em>8 anos</em><em>Hipertrofia</em></div>
+        </div>
+      </div>
+
+      <!-- Ana Costa: instrutora de yoga/pilates feminina em postura de meditação -->
+      <div class="tc" data-r data-d=".1">
+        <div class="tc-img">
+          <img src="https://images.pexels.com/photos/3822622/pexels-photo-3822622.jpeg?auto=compress&cs=tinysrgb&w=600&h=750&fit=crop&crop=top" alt="Ana Costa — Yoga & Pilates"/>
+          <div class="tc-reveal">
+            <p class="tc-frase">"O corpo alcança o que a mente acredita."</p>
+            <div class="tc-soc"><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-whatsapp"></i></a></div>
+          </div>
+        </div>
+        <div class="tc-info">
+          <div><h3>Ana Costa</h3><span>Yoga &amp; Pilates · Yoga Alliance</span></div>
+          <div class="tc-chips"><em>10 anos</em><em>Mindfulness</em></div>
+        </div>
+      </div>
+
+      <!-- Rafael Mendes: atleta masculino em treino de CrossFit/alta intensidade -->
+      <div class="tc" data-r data-d=".2">
+        <div class="tc-img">
+          <img src="https://images.pexels.com/photos/4164761/pexels-photo-4164761.jpeg?auto=compress&cs=tinysrgb&w=600&h=750&fit=crop&crop=top" alt="Rafael Mendes — CrossFit Coach"/>
+          <div class="tc-reveal">
+            <p class="tc-frase">"Sua única competição é quem você era ontem."</p>
+            <div class="tc-soc"><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-whatsapp"></i></a></div>
+          </div>
+        </div>
+        <div class="tc-info">
+          <div><h3>Rafael Mendes</h3><span>CrossFit Coach · CF-L2</span></div>
+          <div class="tc-chips"><em>Campeão Est.</em><em>CrossFit</em></div>
+        </div>
+      </div>
+
+      <!-- Juliana Rocha: nutricionista feminina, aparência profissional e saudável -->
+      <div class="tc" data-r data-d=".3">
+        <div class="tc-img">
+          <img src="https://images.pexels.com/photos/3757954/pexels-photo-3757954.jpeg?auto=compress&cs=tinysrgb&w=600&h=750&fit=crop&crop=top" alt="Juliana Rocha — Nutricionista"/>
+          <div class="tc-reveal">
+            <p class="tc-frase">"Nutrição é o fundamento de tudo."</p>
+            <div class="tc-soc"><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-whatsapp"></i></a></div>
+          </div>
+        </div>
+        <div class="tc-info">
+          <div><h3>Juliana Rocha</h3><span>Nutricionista · CRN 67890</span></div>
+          <div class="tc-chips"><em>Esportiva</em><em>Performance</em></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- GALERIA -->
+<section id="galeria" class="section section-alt galeria-wrap">
+  <div class="container">
+    <div class="sec-head" data-r>
+      <div class="eyebrow">Nossa estrutura</div>
+      <h2>Instalações <em>premium</em></h2>
+    </div>
+  </div>
+  <div class="gallery-flex" data-r>
+    <!-- Salão principal de musculação com equipamentos -->
+    <div class="gf-tall gf-item">
+      <img src="https://images.pexels.com/photos/1431282/pexels-photo-1431282.jpeg?auto=compress&cs=tinysrgb&w=800&h=1100&fit=crop&crop=center" alt="Salão principal"/>
+      <div class="gf-ov"><i class="fas fa-expand-alt"></i><s>Área Principal</s></div>
+    </div>
+    <div class="gf-stack">
+      <!-- Setor de equipamentos de carga/cabos -->
+      <div class="gf-item">
+        <img src="https://images.pexels.com/photos/4162452/pexels-photo-4162452.jpeg?auto=compress&cs=tinysrgb&w=700&h=500&fit=crop&crop=center" alt="Equipamentos"/>
+        <div class="gf-ov"><i class="fas fa-expand-alt"></i><s>Equipamentos</s></div>
+      </div>
+      <!-- Levantamento de peso / barras olímpicas -->
+      <div class="gf-item">
+        <img src="https://images.pexels.com/photos/3289711/pexels-photo-3289711.jpeg?auto=compress&cs=tinysrgb&w=700&h=500&fit=crop&crop=center" alt="Musculação"/>
+        <div class="gf-ov"><i class="fas fa-expand-alt"></i><s>Musculação</s></div>
+      </div>
+    </div>
+    <!-- Parede de halteres, zona de pesos livre -->
+    <div class="gf-tall gf-item">
+      <img src="https://images.pexels.com/photos/416809/pexels-photo-416809.jpeg?auto=compress&cs=tinysrgb&w=800&h=1100&fit=crop&crop=center" alt="Zona de Pesos"/>
+      <div class="gf-ov"><i class="fas fa-expand-alt"></i><s>Zona de Pesos</s></div>
+    </div>
+    <div class="gf-stack">
+      <!-- Esteiras e cardio modernos -->
+      <div class="gf-item">
+        <img src="https://images.pexels.com/photos/3076509/pexels-photo-3076509.jpeg?auto=compress&cs=tinysrgb&w=700&h=500&fit=crop&crop=center" alt="Cardio"/>
+        <div class="gf-ov"><i class="fas fa-expand-alt"></i><s>Cardio Zone</s></div>
+      </div>
+      <!-- Área funcional com cordas e kettlebells -->
+      <div class="gf-item">
+        <img src="https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?auto=compress&cs=tinysrgb&w=700&h=500&fit=crop&crop=center" alt="Funcional"/>
+        <div class="gf-ov"><i class="fas fa-expand-alt"></i><s>Área Funcional</s></div>
+      </div>
+    </div>
+  </div>
+  <div class="gf-bottom">
+    <!-- Box de CrossFit com barras e equipamentos WOD -->
+    <div class="gf-item">
+      <img src="https://images.pexels.com/photos/4944970/pexels-photo-4944970.jpeg?auto=compress&cs=tinysrgb&w=900&h=460&fit=crop&crop=center" alt="CrossFit"/>
+      <div class="gf-ov"><i class="fas fa-expand-alt"></i><s>Box CrossFit</s></div>
+    </div>
+    <!-- Área de relaxamento / sauna / vestiário premium -->
+    <div class="gf-item">
+      <img src="https://images.pexels.com/photos/3822622/pexels-photo-3822622.jpeg?auto=compress&cs=tinysrgb&w=900&h=460&fit=crop&crop=center" alt="Relaxamento"/>
+      <div class="gf-ov"><i class="fas fa-expand-alt"></i><s>Estúdio Yoga</s></div>
+    </div>
+  </div>
+</section>
+
+<!-- PLANOS -->
+<section id="planos" class="section">
+  <div class="container">
+    <div class="sec-head" data-r>
+      <div class="eyebrow">Investimento</div>
+      <h2>Planos feitos para <em>você</em></h2>
+      <p>Sem taxas ocultas. Cancele quando quiser.</p>
+    </div>
+    <div class="pt-wrap" data-r>
+      <s>Mensal</s>
+      <label class="pt-tog"><input type="checkbox" id="ptToggle"/><span class="pt-rail"><span class="pt-ball"></span></span></label>
+      <s>Anual <b class="pt-save">−30%</b></s>
+    </div>
+    <div class="plans-row" data-r>
+
+      <div class="plan">
+        <div class="plan-icon"><i class="fas fa-seedling"></i></div>
+        <h3>Starter</h3>
+        <p>Ideal para quem está começando</p>
+        <div class="plan-price"><sup>R$</sup><span class="pv m">89</span><span class="pv a hidden">62</span><sub>/mês</sub></div>
+        <ul>
+          <li class="y"><i class="fas fa-check"></i>Musculação livre ilimitada</li>
+          <li class="y"><i class="fas fa-check"></i>2 aulas coletivas/mês</li>
+          <li class="y"><i class="fas fa-check"></i>Avaliação física inicial</li>
+          <li class="y"><i class="fas fa-check"></i>App APEX</li>
+          <li class="n"><i class="fas fa-times"></i>Personal trainer</li>
+          <li class="n"><i class="fas fa-times"></i>Nutricionista</li>
+          <li class="n"><i class="fas fa-times"></i>Piscina &amp; Sauna</li>
+        </ul>
+        <a href="#contato" class="plan-btn-o mag-btn">Escolher</a>
+      </div>
+
+      <div class="plan plan-hot">
+        <div class="plan-glow"></div>
+        <div class="plan-badge"><i class="fas fa-bolt"></i> Mais Popular</div>
+        <div class="plan-icon hot-icon"><i class="fas fa-bolt"></i></div>
+        <h3>Pro</h3>
+        <p>Para quem leva os resultados a sério</p>
+        <div class="plan-price"><sup>R$</sup><span class="pv m">159</span><span class="pv a hidden">111</span><sub>/mês</sub></div>
+        <ul>
+          <li class="y"><i class="fas fa-check"></i>Musculação livre ilimitada</li>
+          <li class="y"><i class="fas fa-check"></i>Aulas coletivas ilimitadas</li>
+          <li class="y"><i class="fas fa-check"></i>Avaliação física mensal</li>
+          <li class="y"><i class="fas fa-check"></i>App APEX Premium</li>
+          <li class="y"><i class="fas fa-check"></i>4 sessões personal/mês</li>
+          <li class="y"><i class="fas fa-check"></i>Acesso à piscina</li>
+          <li class="n"><i class="fas fa-times"></i>Nutricionista</li>
+        </ul>
+        <a href="#contato" class="plan-btn-f mag-btn">Escolher</a>
+      </div>
+
+      <div class="plan">
+        <div class="plan-icon"><i class="fas fa-crown"></i></div>
+        <h3>Elite</h3>
+        <p>A experiência APEX completa</p>
+        <div class="plan-price"><sup>R$</sup><span class="pv m">249</span><span class="pv a hidden">174</span><sub>/mês</sub></div>
+        <ul>
+          <li class="y"><i class="fas fa-check"></i>Acesso total a tudo</li>
+          <li class="y"><i class="fas fa-check"></i>Aulas coletivas ilimitadas</li>
+          <li class="y"><i class="fas fa-check"></i>Avaliação física semanal</li>
+          <li class="y"><i class="fas fa-check"></i>App APEX VIP</li>
+          <li class="y"><i class="fas fa-check"></i>Personal trainer ilimitado</li>
+          <li class="y"><i class="fas fa-check"></i>Piscina + Sauna + Spa</li>
+          <li class="y"><i class="fas fa-check"></i>Nutricionista incluso</li>
+        </ul>
+        <a href="#contato" class="plan-btn-o mag-btn">Escolher</a>
+      </div>
+
+    </div>
+    <p class="plan-note" data-r><i class="fas fa-shield-check"></i> 7 dias grátis · Sem cartão · Cancele quando quiser</p>
+  </div>
+</section>
+
+<!-- DEPOIMENTOS -->
+<section id="depoimentos" class="section section-alt">
+  <div class="container">
+    <div class="sec-head" data-r>
+      <div class="eyebrow">Depoimentos</div>
+      <h2>A voz de quem <em>transformou</em></h2>
+    </div>
+    <div class="tbox" data-r>
+      <div class="tbox-accent"></div>
+      <div id="tSlider">
+        <div class="tcard active">
+          <div class="tcard-q">"</div>
+          <p>"Em 6 meses perdi 18kg e ganhei uma qualidade de vida que nunca imaginei. Os instrutores são incríveis, o ambiente é contagiante. A APEX mudou minha vida de verdade."</p>
+          <div class="tcard-foot">
+            <!-- Depoimento de Mariana — mulher sorridente -->
+            <img src="https://images.pexels.com/photos/1065084/pexels-photo-1065084.jpeg?auto=compress&cs=tinysrgb&w=120&h=120&fit=crop&crop=face" alt="Mariana"/>
+            <div><b>Mariana Ferreira</b><s>Contabilista · 8 meses</s></div>
+            <div class="tcard-stars">★★★★★</div>
+          </div>
+        </div>
+        <div class="tcard">
+          <div class="tcard-q">"</div>
+          <p>"A estrutura da APEX é de outro nível. Equipamentos modernos, equipe presente. Nunca me senti sozinho no processo. Resultado em 1 ano: me reconheço no espelho."</p>
+          <div class="tcard-foot">
+            <!-- Depoimento de Pedro — homem com expressão confiante -->
+            <img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=120&h=120&fit=crop&crop=face" alt="Pedro"/>
+            <div><b>Pedro Almeida</b><s>Engenheiro · 1 ano</s></div>
+            <div class="tcard-stars">★★★★★</div>
+          </div>
+        </div>
+        <div class="tcard">
+          <div class="tcard-q">"</div>
+          <p>"As aulas de yoga com a Ana Costa são transformadoras. Postura, ansiedade, sono — tudo melhorou em 3 meses. Não consigo imaginar minha vida sem a APEX."</p>
+          <div class="tcard-foot">
+            <!-- Depoimento de Beatriz — mulher sorridente -->
+            <img src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=120&h=120&fit=crop&crop=face" alt="Beatriz"/>
+            <div><b>Beatriz Santos</b><s>Designer · 6 meses</s></div>
+            <div class="tcard-stars">★★★★★</div>
+          </div>
+        </div>
+        <div class="tcard">
+          <div class="tcard-q">"</div>
+          <p>"O CrossFit do Rafael me desafiou como nunca. Em 4 meses corri minha primeira corrida de 10km e perdi 9kg. Resultado + diversão — tudo que eu precisava."</p>
+          <div class="tcard-foot">
+            <!-- Depoimento de Lucas — jovem homem -->
+            <img src="https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=120&h=120&fit=crop&crop=face" alt="Lucas"/>
+            <div><b>Lucas Oliveira</b><s>Advogado · 4 meses</s></div>
+            <div class="tcard-stars">★★★★★</div>
+          </div>
+        </div>
+      </div>
+      <div class="tnav">
+        <button id="tPrev"><i class="fas fa-arrow-left"></i></button>
+        <div id="tDots"></div>
+        <button id="tNext"><i class="fas fa-arrow-right"></i></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-band">
+  <!-- Treino de alta intensidade como backdrop do CTA -->
+  <img src="https://images.pexels.com/photos/3837781/pexels-photo-3837781.jpeg?auto=compress&cs=tinysrgb&w=1600&h=600&fit=crop&crop=center" alt=""/>
+  <div class="cta-band-veil"></div>
+  <div class="container cta-band-body" data-r>
+    <div>
+      <div class="eyebrow" style="color:#ff7700">Oferta exclusiva</div>
+      <h2>Primeira semana <em>100% grátis</em></h2>
+      <p>Sem cartão de crédito. Venha conhecer sem compromisso.</p>
+    </div>
+    <a href="#contato" class="btn-fill mag-btn" style="white-space:nowrap;flex-shrink:0">Resgatar Agora <i class="fas fa-arrow-right"></i></a>
+  </div>
+</div>
+
+<!-- CONTATO -->
+<section id="contato" class="section">
+  <div class="container">
+    <div class="sec-head" data-r>
+      <div class="eyebrow">Fale conosco</div>
+      <h2>Inicie sua <em>transformação</em></h2>
+    </div>
+    <div class="contact-wrap">
+      <div class="contact-left" data-r>
+        <div class="cl-item"><div class="cl-ico"><i class="fas fa-map-marker-alt"></i></div><div><h4>Endereço</h4><p>Av. Paulista, 1234 — Bela Vista<br/>São Paulo, SP · CEP 01310-100</p></div></div>
+        <div class="cl-item"><div class="cl-ico"><i class="fas fa-clock"></i></div><div><h4>Horários</h4><p>Seg–Sex: 05:30 – 23:00<br/>Sáb: 07:00 – 20:00 · Dom: 08:00 – 14:00</p></div></div>
+        <div class="cl-item"><div class="cl-ico"><i class="fas fa-phone"></i></div><div><h4>Contato</h4><p>(11) 9 9999-8888 WhatsApp<br/>(11) 3333-4444 Fixo</p></div></div>
+        <div class="cl-item"><div class="cl-ico"><i class="fas fa-envelope"></i></div><div><h4>E-mail</h4><p>contato@apexfitness.com.br</p></div></div>
+        <div class="cl-soc">
+          <a href="#" class="cs ig"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="cs wa"><i class="fab fa-whatsapp"></i></a>
+          <a href="#" class="cs yt"><i class="fab fa-youtube"></i></a>
+          <a href="#" class="cs fb"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="cs tt"><i class="fab fa-tiktok"></i></a>
+        </div>
+      </div>
+      <div class="contact-right" data-r data-d=".15">
+        <form id="contactForm">
+          <div class="ff-row">
+            <div class="ff-g"><input type="text" id="cn" placeholder=" " required/><label for="cn">Nome completo</label></div>
+            <div class="ff-g"><input type="tel" id="cp" placeholder=" "/><label for="cp">WhatsApp</label></div>
+          </div>
+          <div class="ff-g"><input type="email" id="ce" placeholder=" " required/><label for="ce">E-mail</label></div>
+          <div class="ff-g ff-sel">
+            <select id="cpl"><option value="" disabled selected></option><option>Starter — R$89/mês</option><option>Pro — R$159/mês</option><option>Elite — R$249/mês</option><option>Só quero conhecer</option></select>
+            <label class="slbl" for="cpl">Plano de interesse</label>
+            <i class="fas fa-chevron-down sarr"></i>
+          </div>
+          <div class="ff-g"><textarea id="cm" rows="4" placeholder=" "></textarea><label for="cm">Mensagem (opcional)</label></div>
+          <button type="submit" class="btn-submit mag-btn"><span>Enviar mensagem</span><i class="fas fa-arrow-right"></i></button>
+        </form>
+        <div id="formOk" class="form-ok hidden">
+          <div class="fok-ring"><i class="fas fa-check"></i></div>
+          <h3>Mensagem enviada!</h3>
+          <p>Nossa equipe entrará em contato em até 2 horas.</p>
+        </div>
+      </div>
+    </div>
+    <div class="map-block" data-r>
+      <div class="map-hdr">
+        <i class="fas fa-location-dot"></i><span>Av. Paulista, 1234 · São Paulo, SP</span>
+        <a href="https://maps.google.com" target="_blank" rel="noopener" class="map-ext">Abrir no Maps <i class="fas fa-external-link-alt"></i></a>
+      </div>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.0975046967657!2d-46.65456232378777!3d-23.563399061505377!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c8da0aa315%3A0xd59f9431f2c9776a!2sAv.%20Paulista%2C%20S%C3%A3o%20Paulo%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="APEX FITNESS"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="footer">
+  <div class="ft-top">
+    <div class="container ft-grid">
+      <div class="ft-brand">
+        <a href="#hero" class="logo"><svg width="26" height="26" viewBox="0 0 30 30" fill="none"><path d="M15 1.5L28.5 8.75V21.25L15 28.5L1.5 21.25V8.75L15 1.5Z" stroke="url(#lg3)" stroke-width="1.5" fill="none"/><path d="M11.5 15L14 12L17 15L14 18Z" fill="url(#lg3)"/><defs><linearGradient id="lg3" x1="1" y1="1" x2="29" y2="29" gradientUnits="userSpaceOnUse"><stop stop-color="#ff2d55"/><stop offset="1" stop-color="#ff7700"/></linearGradient></defs></svg><div class="logo-words"><b>APEX</b><em>FITNESS</em></div></a>
+        <p>Transformando vidas em São Paulo desde 2012. Junte-se à maior comunidade fitness da cidade.</p>
+        <div class="ft-soc"><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-youtube"></i></a><a href="#"><i class="fab fa-tiktok"></i></a><a href="#"><i class="fab fa-whatsapp"></i></a></div>
+      </div>
+      <div class="ft-col"><h5>Navegação</h5><ul><li><a href="#sobre">Sobre</a></li><li><a href="#modalidades">Modalidades</a></li><li><a href="#horarios">Horários</a></li><li><a href="#instrutores">Instrutores</a></li><li><a href="#planos">Planos</a></li><li><a href="#contato">Contato</a></li></ul></div>
+      <div class="ft-col"><h5>Atividades</h5><ul><li><a href="#">Musculação</a></li><li><a href="#">CrossFit</a></li><li><a href="#">Yoga &amp; Pilates</a></li><li><a href="#">Spinning</a></li><li><a href="#">Boxe &amp; MMA</a></li><li><a href="#">Natação</a></li></ul></div>
+      <div class="ft-col ft-app"><h5>App APEX</h5><p>Acompanhe treinos, agende aulas e veja sua evolução.</p><a href="#" class="ft-dl"><i class="fab fa-apple"></i><div><s>Baixar na</s><b>App Store</b></div></a><a href="#" class="ft-dl"><i class="fab fa-google-play"></i><div><s>Disponível no</s><b>Google Play</b></div></a><div class="ft-rat"><span>★★★★★</span><s>4.9 · +5.200 reviews</s></div></div>
+    </div>
+  </div>
+  <div class="ft-bar"><div class="container ft-bar-inner"><p>© 2024 APEX FITNESS — Todos os direitos reservados</p><div class="ft-bar-links"><a href="#">Privacidade</a><a href="#">Termos</a><a href="#">LGPD</a></div></div></div>
+</footer>
+
+<!-- VIDEO MODAL -->
+<div id="vModal" class="vmodal"><div class="vm-box"><button id="vmClose" class="vm-close"><i class="fas fa-times"></i></button><div class="vm-frame"><iframe id="vmIframe" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="APEX Tour"></iframe></div></div></div>
+
+<!-- LIGHTBOX -->
+<div id="lb" class="lb"><button class="lb-x"><i class="fas fa-times"></i></button><button class="lb-l"><i class="fas fa-chevron-left"></i></button><button class="lb-r"><i class="fas fa-chevron-right"></i></button><div class="lb-inner"><img id="lbI" src="" alt=""/><span id="lbC"></span></div></div>
+
+<a href="https://wa.me/5511999998888" class="wa-fab" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a>
+<button id="btt"><i class="fas fa-arrow-up"></i></button>
+
+<script src="script.js"></script>
+</body>
+</html>
